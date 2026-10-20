@@ -1,0 +1,262 @@
+{
+  "info": {
+    "name": "API Professores - Mateus Novais Chaves",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 - Listar todos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores"
+          ]
+        }
+      }
+    },
+    {
+      "name": "02 - Buscar por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "03 - Listar turmas do professor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores/1/turmas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "1",
+            "turmas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "04 - Listar por departamento",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores/departamento/Computação",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "departamento",
+            "Computação"
+          ]
+        }
+      }
+    },
+    {
+      "name": "05 - Atualizar professor",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/professores/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"idade\": 20,\n  \"departamento\": \"Engenharia\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "06 - Conferir atualização",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "07 - Adicionar turma",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/professores/1/turmas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "1",
+            "turmas"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigo\": \"5E\",\n  \"disciplina\": \"APIs com Node.js\",\n  \"alunos\": [\n    \"Paula\",\n    \"Rafael\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "08 - Conferir turmas após POST",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores/1/turmas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "1",
+            "turmas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "09 - Remover professor",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores/2",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "2"
+          ]
+        }
+      }
+    },
+    {
+      "name": "10 - Conferir remoção (lista)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores"
+          ]
+        }
+      }
+    },
+    {
+      "name": "11 - PUT com ID inexistente",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/professores/99",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "99"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Teste\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "12 - DELETE com ID inexistente",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/professores/99",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "professores",
+            "99"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
